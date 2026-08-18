@@ -1,69 +1,394 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>上億國際｜試算結果</title>
-<link rel="icon" href="favicon.jpg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>上億國際｜試算結果</title>
+<link rel="icon" href="favicon.jpg" type="image/png">
 <link rel="apple-touch-icon" href="favicon.jpg">
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<style>
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif}
-.logo img{width:180px;height:auto;display:block;margin:0 auto}
-.car-url{font-size:13px;color:#64748b;background:#fff;border-radius:10px;padding:10px 12px;border:1px solid #e2e8f0;line-height:1.5;text-align:center}
-.notice{text-align:center;font-size:13px;line-height:1.8;color:#64748b}.notice a{font-weight:800}
-</style>
-</head>
-<body class="bg-slate-100 text-slate-800 min-h-screen pb-10">
-<main class="max-w-xl mx-auto px-4 py-8">
-<div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-<div class="bg-slate-900 text-white text-center px-5 py-7">
-<div class="logo mb-3"><img src="logo.jpg" alt="上億國際"></div>
-<div class="text-sm text-slate-300">韓國 Encar 車輛試算結果</div>
-</div>
-<div class="p-5 sm:p-7">
-<div class="text-center">
-<div class="text-2xl sm:text-3xl font-black text-slate-900">🎉 試算完成 🎉</div>
-<div class="text-sm text-slate-500 mt-2">預估主要金額</div>
-<div class="mt-5 flex justify-center items-baseline gap-2 whitespace-nowrap">
-<span class="text-2xl sm:text-3xl text-slate-400 font-black">NT$</span>
-<span id="total" class="font-black text-blue-600 tracking-tighter leading-none text-[clamp(3.2rem,16vw,6rem)]">試算結果</span>
-</div>
-</div>
-<div id="carUrlBox" class="car-url mt-6"></div>
-<div class="mt-6 bg-slate-50 rounded-2xl border border-slate-200 p-5 text-center">
-<div class="text-sm font-bold text-slate-700 mb-4">📱 下一步</div>
-<div class="space-y-3 text-sm text-slate-600">
-<div class="flex items-center justify-center gap-2"><div class="w-7 h-7 rounded-full bg-blue-600 text-white font-black flex items-center justify-center">1</div><div>點擊下方按鈕開啟專員 LINE</div></div>
-<div class="flex items-center justify-center gap-2"><div class="w-7 h-7 rounded-full bg-blue-600 text-white font-black flex items-center justify-center">2</div><div>確認已複製試算結果</div></div>
-<div class="flex items-center justify-center gap-2"><div class="w-7 h-7 rounded-full bg-blue-600 text-white font-black flex items-center justify-center">3</div><div>在聊天輸入框<strong style="color:red;">長按 → 貼上 → 傳送</strong></div></div>
-</div></div>
-<button onclick="copyAndOpenLine()" class="w-full mt-5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 px-4 rounded-xl shadow-lg shadow-emerald-600/30 transition flex items-center justify-center gap-2 text-base">
-<i class="fa-brands fa-line text-2xl"></i>複製結果・開啟專員 LINE
-</button>
-<div class="text-center text-sm font-bold mt-3" id="status"></div>
-<div class="notice mt-5">
-洽詢專線：詹經理 <a href="tel:0928131216">0928-131216</a><br><br>
-<a href="index.html" target="_blank" rel="noopener">→ 回到上億國際主網站 ←</a>
-</div>
-<div class="mt-6 text-center text-xs text-slate-400 leading-relaxed">上億國際 · 一條龍完整服務<br>從挑車、引進、過戶到售後<br>05-285-2066</div>
-</div></div>
-<div class="text-center text-[11px] text-slate-400 mt-5">本試算金額僅供參考，實際費用依正式合約為準。</div>
-</main>
-<script>
-const params=new URLSearchParams(window.location.search);
-const total=params.get('total')||'';
-const carUrl=params.get('carUrl')||'';
-function formatMoney(v){const n=Number(String(v).replace(/[^0-9.-]/g,''));return Number.isFinite(n)?n.toLocaleString('en-US'):''}
-const formattedTotal=formatMoney(total);
-document.getElementById('total').textContent=formattedTotal||'試算結果';
-function escapeHtml(str){return String(str).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'})[m])}
-document.getElementById('carUrlBox').innerHTML=carUrl?'<a href="'+escapeHtml(carUrl)+'" target="_blank" rel="noopener">您試算的車輛網址</a>':'未提供車輛網址';
-function copyAndOpenLine(){
-const message="您好，我在上億國際試算韓國 Encar 車輛預估主要金額約為 NT$ "+formattedTotal+"元\n"+(carUrl?"車輛網址："+carUrl+"\n":"")+"\n上億國際 · 一條龍完整服務✨從挑車、引進、過戶到售後，為您提供完整服務 05-285-2066";
-navigator.clipboard.writeText(message).then(()=>{document.getElementById('status').textContent='已複製試算結果，即將開啟 LINE。';window.open('https://line.me/ti/p/NtUpGMqsZm','_blank')}).catch(()=>{document.getElementById('status').textContent='複製失敗，請手動複製試算結果。'})
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "Noto Sans TC", sans-serif;
+            background:
+                radial-gradient(circle at top, #e8f2ff 0%, #f5f7f8 38%, #f5f7f8 100%);
+            color: #1f2937;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 520px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 28px 22px 24px;
+            box-shadow: 0 16px 45px rgba(15, 23, 42, 0.10);
+            border: 1px solid rgba(226, 232, 240, 0.9);
+        }
+
+        .brand {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+.logo {
+    display: inline-block;
 }
+
+.logo img {
+    width: 160px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .result-box {
+            background: linear-gradient(145deg, #f8fbff, #f8fafc);
+            border: 1px solid #dbeafe;
+            border-radius: 18px;
+            padding: 20px 18px;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .total {
+            font-size: clamp(30px, 8vw, 40px);
+            font-weight: 900;
+            color: #2563eb;
+            text-align: center;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+      .car-url {
+    font-size: 12px;
+    color: #64748b;
+    word-break: break-all;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+        .car-url a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .car-url a:hover {
+            text-decoration: underline;
+        }
+
+        .guide-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 900;
+            color: #0f172a;
+            margin: 22px 0 14px;
+        }
+
+        .steps {
+            display: grid;
+            gap: 9px;
+            margin-bottom: 16px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 11px 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 13px;
+            font-size: 13px;
+            color: #475569;
+        }
+
+        .step-number {
+            flex: 0 0 27px;
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            background: #e8f0ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .step strong {
+            color: #1e293b;
+        }
+
+        .line-button {
+            display: block;
+            width: 100%;
+            border: 0;
+            border-radius: 14px;
+            padding: 16px 18px;
+            background: #06c755;
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(6, 199, 85, 0.24);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+        }
+
+        .line-button:hover {
+            background: #05b64d;
+            box-shadow: 0 10px 22px rgba(6, 199, 85, 0.30);
+            transform: translateY(-1px);
+        }
+
+        .line-button:active {
+            transform: scale(0.98);
+        }
+
+        .button-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 9px;
+            line-height: 1.5;
+        }
+
+        .copy-status {
+            text-align: center;
+            min-height: 22px;
+            margin-top: 10px;
+            color: #059669;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .notice {
+            margin-top: 18px;
+            padding: 14px 14px 0;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .notice strong {
+            color: #334155;
+        }
+
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 11px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 380px) {
+            body {
+                padding: 14px 10px;
+            }
+
+            .card {
+                padding: 23px 15px 20px;
+                border-radius: 20px;
+            }
+
+            .step {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="brand">
+        <div class="logo">
+    <img src="logo.jpg" alt="上億國際">
+</div>
+        <div class="subtitle">韓國 Encar 車輛試算結果</div>
+    </div>
+
+    <div class="result-box">
+        <div class="label">本次試算預估主要金額</div>
+
+        <div class="total" id="total">
+            讀取中…
+        </div>
+
+        <div class="car-url" id="carUrlBox"></div>
+    </div>
+
+    <div class="guide-title">📱 接下來只要 3 步驟</div>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <div><strong>點擊下方 LINE 按鈕</strong>，結果會自動複製</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div>開啟 LINE，<strong>加入好友</strong>（第一次使用才需要）</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div>在聊天輸入框<strong style="color: red;">長按 → 貼上 → 傳送</strong></div>
+        </div>
+    </div>
+
+    <button class="line-button" onclick="copyAndOpenLine()">
+        💬 複製結果・開啟專員 LINE
+    </button>
+
+    <div class="button-subtitle">
+        已自動複製試算結果，不需要重新輸入
+    </div>
+
+    <div class="copy-status" id="status"></div>
+
+<div class="notice">
+    
+    洽詢專線：詹經理
+    <a href="tel:0928131216">0928-131216</a><br><br>
+→ <a href="index.html" target="_blank" rel="noopener">回到上億國際主網站</a> ←
+</div>
+
+    <div class="footer">
+        上億國際 · 一條龍完整服務<br>
+        從挑車、引進、過戶到售後05-285-2066
+    </div>
+
+</div>
+
+<script>
+
+    // 上億國際專員個人 LINE
+    const LINE_URL = "https://line.me/ti/p/NtUpGMqsZm";
+
+    // 取得 QR Code 帶過來的資料
+    const params = new URLSearchParams(window.location.search);
+
+    const total = params.get("total") || "";
+    const carUrl = params.get("carUrl") || "";
+
+    // 顯示試算金額
+    document.getElementById("total").textContent =
+    total ? "NT$ " + Number(total).toLocaleString("en-US") : "試算結果";
+
+    // 顯示車輛網址
+    if (carUrl) {
+    document.getElementById("carUrlBox").innerHTML =
+        '<a href="' + escapeHtml(carUrl) +
+        '" target="_blank" rel="noopener">' +
+        '您試算的車輛網址' +
+        '</a>';
+}
+
+    // 要複製給專員的完整訊息
+    function getMessage() {
+
+        let formattedTotal = Number(total).toLocaleString("en-US");
+
+let message =
+    "您好，我在上億國際試算韓國 Encar 車輛預估主要金額約為 NT$ " +
+    formattedTotal + "元";
+
+        if (carUrl) {
+            message += "\n車輛網址：" + carUrl;
+        }
+
+        message +=
+            "\n\n上億國際 · 一條龍完整服務✨從挑車、引進、過戶到售後，為您提供全面尊榮服務05-285-2066";
+
+        return message;
+    }
+
+    // 複製結果後開啟專員 LINE
+    async function copyAndOpenLine() {
+
+        const message = getMessage();
+
+        try {
+
+            await navigator.clipboard.writeText(message);
+
+            document.getElementById("status").textContent =
+                "✓ 已複製，正在開啟 LINE…";
+
+        } catch (error) {
+
+            // 如果手機瀏覽器不允許自動複製
+            const textarea = document.createElement("textarea");
+
+            textarea.value = message;
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                document.execCommand("copy");
+                document.getElementById("status").textContent =
+                    "✓ 已複製，正在開啟 LINE…";
+            } catch (e) {
+                document.getElementById("status").textContent =
+                    "請手動複製試算結果";
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        setTimeout(() => {
+            window.location.href = LINE_URL;
+        }, 300);
+    }
+
+    function escapeHtml(text) {
+        return text
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
 </script>
+
 </body>
 </html>
