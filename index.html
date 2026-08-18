@@ -21,7 +21,9 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome 圖標庫 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
     <style>
         html {
@@ -151,52 +153,41 @@
         <i class="fa-solid fa-arrow-up text-sm sm:text-base"></i>
     </button>
 
-    <!-- 固定底部 LINE CTA -->
-    <a href="https://line.me/ti/p/NtUpGMqsZm" target="_blank"
-        class="fixed bottom-0 left-0 w-full z-50 bg-[#06C755] hover:bg-[#05b64d] transition duration-300 shadow-[0_-8px_20px_rgba(0,0,0,.25)]">
+<!-- 固定底部 LINE CTA -->
+<a href="https://line.me/ti/p/NtUpGMqsZm" target="_blank"
+    class="fixed bottom-0 left-0 w-full z-50 bg-[#06C755] hover:bg-[#05b64d] transition duration-300 animate-breathe">
 
-        <div class="max-w-6xl mx-auto flex items-center justify-center gap-3 py-4 px-5">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-3 py-4 px-5">
 
-            <i class="fa-brands fa-line text-4xl text-white"></i>
+        <i class="fa-brands fa-line text-4xl text-white"></i>
 
-            <div class="text-white text-center">
+        <div class="text-white text-center">
 
-                <div class="font-black text-lg sm:text-xl">
-                    免費一對一 【LINE 諮詢】
-                </div>
+            <div class="font-black text-lg sm:text-xl">
+                免費一對一 【LINE 諮詢】
+            </div>
 
-                <div class="text-sm sm:text-base opacity-95">
-                    找車、估價、流程問題，加入 LINE 問就對了 →
-                </div>
-
+            <div class="text-sm sm:text-base opacity-95">
+                找車、估價、流程問題，加入 LINE 問就對了 →
             </div>
 
         </div>
 
-    </a>
-
-    <!-- 頂部 Header & LOGO -->
-<header
-    class="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white py-6 md:py-8 shadow-2xl border-b border-slate-800">
-
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
-
-       <!-- 上億國際 LOGO -->
-<a href="https://www.facebook.com/sebestcar"
-    target="_blank"
-    title="前往上億國際 FB 粉絲專頁"
-    class="bg-white backdrop-blur-md px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl shadow-2xl border border-white/20 mb-5 inline-flex items-center justify-center hover:scale-105 transition duration-300">
-
-    <img
-        src="logo.jpg"
-        alt="上億國際 LOGO"
-        class="h-10 sm:h-12 md:h-16 w-auto object-contain">
+    </div>
 
 </a>
+    <!-- 頂部 Header & LOGO -->
+    <header
+        class="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white py-6 md:py-8 shadow-2xl border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
 
-        <!-- 首頁主訴求 -->
-        <div class="w-full max-w-4xl mx-auto mt-2">
+            <a href="https://www.facebook.com/sebestcar" target="_blank" title="前往上億國際 FB 粉絲專頁"
+                class="bg-white/95 backdrop-blur-md px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl shadow-2xl border border-white/20 mb-5 inline-flex items-center justify-center hover:scale-105 transition duration-300">
+                <img src="logo.jpg" alt="上億國際 LOGO" class="h-10 sm:h-12 md:h-16 w-auto object-contain">
+            </a>
 
+           <!-- 首頁主訴求 -->
+<div class="w-full max-w-4xl mx-auto mt-2">
 
     <!-- 車價透明化主標 -->
     <div class="p-[2px] rounded-3xl bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 shadow-xl">
@@ -468,9 +459,9 @@
                                     <span> 加入 LINE 免費取得完整報價明細</span>
                                 </div>
                             </div>
-                        </div>
+                                                </div>
 
-<!-- 排氣量提醒 -->
+                        <!-- 排氣量提醒 -->
 <p class="text-[11px] sm:text-xs text-slate-500 text-center mt-3 font-medium leading-relaxed">
     ※ <span class="text-amber-500">3,000cc 以上</span>
     車輛適用不同計算方式<br>
@@ -480,24 +471,80 @@
     </a>
 </p>
 
-
-
                         <!-- 警語註記區塊 -->
-                        <p class="text-[11px] sm:text-xs text-slate-500 text-center mt-3 font-medium leading-relaxed">
-                            ※ 本試算金額僅供參考，實際費用依正式合約為準。
-                        </p>
+<p class="text-[11px] sm:text-xs text-slate-500 text-center mt-1 font-medium leading-relaxed">
+    ※ 本試算金額僅供參考，實際費用依正式合約為準。
+</p>
 
-                        <!-- LINE 諮詢按鈕與提示 -->
-                        <div class="mt-5 space-y-2 text-center">
-                            <button onclick="copyResult()"
-                                class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 px-4 rounded-xl shadow-lg shadow-emerald-600/30 transition duration-200 flex items-center justify-center gap-2 text-base md:text-lg tracking-wide whitespace-nowrap">
-                                <i class="fa-brands fa-line text-2xl"></i> 複製結果，加LINE問
-                            </button>
 
-                            <p class="text-sm text-red-600 font-bold mt-1">
-                                ⬆️ 點擊後，到LINE對話框長按貼上
-                            </p>
-                        </div>
+                        <!-- LINE 諮詢按鈕 -->
+<div class="mt-5 space-y-2 text-center">
+
+    <!-- 📱 手機版：維持原本功能 -->
+    <div class="block md:hidden">
+        <button onclick="copyResult()"
+            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 px-4 rounded-xl shadow-lg shadow-emerald-600/30 transition duration-200 flex items-center justify-center gap-2 text-base tracking-wide whitespace-nowrap">
+            <i class="fa-brands fa-line text-2xl"></i> 複製結果，加LINE問
+        </button>
+
+        <p class="text-sm text-red-600 font-bold mt-1">
+            ⬆️ 點擊後，到LINE對話框長按貼上
+        </p>
+    </div>
+
+
+    <!-- 💻 電腦版：傳送試算結果到手機 -->
+    <div class="hidden md:block">
+
+        <button onclick="showPhoneTransfer()"
+            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 px-4 rounded-xl shadow-lg shadow-emerald-600/30 transition duration-200 flex items-center justify-center gap-2 text-base md:text-lg tracking-wide whitespace-nowrap">
+            <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+            傳送結果到手機.用LINE 洽詢
+        </button>
+
+        <!-- QR Code 區塊：預設隱藏 -->
+        <div id="phoneTransfer"
+            class="hidden mt-5 bg-gradient-to-br from-slate-50 to-blue-50/70 border border-blue-100 rounded-2xl p-5 md:p-6 shadow-inner">
+
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-blue-100 text-blue-600 mb-3">
+                    <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+                </div>
+
+                <p class="text-base md:text-lg font-black text-slate-800">
+                    📱 用手機開啟相機掃描，將結果帶去LINE詢問
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-500 mt-1 leading-relaxed">
+                    掃描後會開啟「試算結果」頁面<br>
+                    再依照畫面指示前往 LINE 洽詢
+                </p>
+            </div>
+
+            <div class="mt-4 mx-auto w-fit bg-white p-3 rounded-2xl shadow-md border border-slate-200">
+                <div id="qrCode" class="flex justify-center"></div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-center gap-2 text-xs md:text-sm text-slate-600">
+                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white font-black text-[11px]">1</span>
+                <span>拿手機掃描 QR Code</span>
+                <span class="text-slate-300">→</span>
+                <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white font-black text-[11px]">2</span>
+                <span>照畫面操作即可</span>
+            </div>
+
+            <div class="mt-4 bg-white/80 border border-blue-100 rounded-xl px-4 py-3 text-center">
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    <i class="fa-regular fa-lightbulb text-amber-500 mr-1"></i>
+                    手機掃描後，試算金額與車輛網址會自動帶入
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
                     </div>
 
                     <button onclick="resetCalculator()"
@@ -578,9 +625,9 @@
                             <i class="fa-brands fa-line text-xl"></i> 加入LINE 線上詢問(詹經理)
                         </a>
 
-                        <a href="tel:+886928131216"
+                        <a href="tel:+886929920941"
                             class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3.5 px-4 rounded-xl shadow transition duration-200 flex items-center justify-center gap-2 text-sm whitespace-nowrap">
-                            <i class="fa-solid fa-phone text-base"></i> 撥打服務專線：0928131216
+                            <i class="fa-solid fa-phone text-base"></i> 撥打服務專線：0928-131216
                         </a>
                     </div>
                 </div>
@@ -592,8 +639,8 @@
                     <div class="flex items-start gap-3">
                         <i class="fa-solid fa-location-dot text-blue-600 text-xl mt-0.5 flex-shrink-0"></i>
                         <div>
-                            <span class="font-black text-slate-900 text-base">上億國際嘉義外匯車展示中心：</span><br>
-                            <span class="text-base font-medium text-slate-800">600 嘉義市西區博愛路二段568-1號</span>
+                            <span class="font-black text-slate-900 text-base">上億國際高雄外匯車展示中心：</span><br>
+                            <span class="text-base font-medium text-slate-800">600 嘉義市博愛路二段568號（家樂福對面）</span>
                             <a href="https://maps.app.goo.gl/WVij9EDVpHYaCTCD7"
                                 target="_blank"
                                 class="text-blue-600 underline font-bold block mt-1 text-xs md:text-sm hover:text-blue-800 whitespace-nowrap">
@@ -670,7 +717,7 @@
 
             <div class="pt-3 border-t border-slate-800 space-y-2">
                 <p class="text-xs text-slate-500">
-                    © 上億開發國際有限公司 SHANG YI AUTO INTERNATIONAL. All Rights Reserved.
+                    © 上億國際有限公司 SHANG YI AUTO INTERNATIONAL All Rights Reserved.
                 </p>
 
                 <p class="text-[11px] text-slate-600 italic">
@@ -1051,19 +1098,57 @@ if (lastUpdate) {
             carUrlInput.focus();
         }
 
-        // 5. 複製結果
+// 💻 電腦版：傳送結果到手機
+function showPhoneTransfer() {
+    const total = document.getElementById('totalTwd').textContent;
+    const carUrl = document.getElementById('carUrl').value.trim();
+
+    const formattedTotal = Number(total.replace(/[^0-9]/g, '')).toLocaleString("en-US");
+    let text = `您好，我在上億國際試算韓國 Encar 車輛預估主要金額約為 NT$ ${formattedTotal}元
+`;
+
+    if (carUrl) {
+        text += `車輛網址：${carUrl}\n`;
+    }
+
+    text += `\n上億國際 · 一條龍完整服務✨從挑車、引進、過戶到售後，為您提供全面尊榮服務05-285-2066`;
+
+    const transferBox = document.getElementById('phoneTransfer');
+    const qrBox = document.getElementById('qrCode');
+
+    transferBox.classList.remove('hidden');
+
+    qrBox.innerHTML = '';
+
+const qrImage = document.createElement('img');
+
+// ⚠️ 重要：QR Code 會連到此網站的 transfer.html
+// ⚠️ 如果網站搬家、GitHub Pages 網址改變，請記得修改下面的路徑
+qrImage.src = 'https://quickchart.io/qr?text=' + encodeURIComponent('https://sebestcar.github.io/shangyi-car/transfer.html?total=' + encodeURIComponent(total.replace(/[^0-9]/g, '')) + '&carUrl=' + encodeURIComponent(carUrl)) + '&size=220';
+
+qrImage.width = 220;
+qrImage.height = 220;
+qrImage.alt = '試算結果 QR Code';
+
+qrBox.appendChild(qrImage);
+}
+
+
+        
         function copyResult() {
             const total = document.getElementById('totalTwd').textContent;
             const carUrl = document.getElementById('carUrl').value.trim();
 
-            let text = `您好，我在上億國際試算韓國 Encar 車輛預估主要金額約為 NT$ ${total}！\n`;
+            const formattedTotal = Number(total.replace(/[^0-9]/g, '')).toLocaleString("en-US");
+    let text = `您好，我在上億國際試算韓國 Encar 車輛預估主要金額約為 NT$ ${formattedTotal}元
+`;
             if (carUrl) {
                 text += `車輛網址：${carUrl}\n`;
             }
-            text += `\n上億國際 · 一條龍完整服務✨從挑車、引進、過戶到售後，為您提供完整服務 05-285-2066`;
+            text += `\n上億國際 · 一條龍完整服務✨從挑車、引進、過戶到售後，為您提供全面尊榮服務05-285-2066`;
 
             navigator.clipboard.writeText(text).then(() => {
-                alert('已複製試算結果與網址，即將為您開啟 LINE 諮詢詹經理！請在 LINE 對話框貼上文字。');
+                alert('已複製試算結果與網址，即將為您開啟 LINE 諮詢專員！請在 LINE 對話框貼上文字。');
                 window.open('https://line.me/ti/p/NtUpGMqsZm', '_blank');
             });
         }
